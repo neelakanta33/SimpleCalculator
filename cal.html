@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .section {
+            height: 470px;
+            width: 270px;
+            position: relative;
+            left: 42%;
+            top: 150px;
+            background-color: black;
+            border-radius: 10px;
+            box-shadow: 10px 10px 15px black;
+        }
+        
+        #screen {
+            width: 180px;
+            height: 80px;
+            background-color: black;
+            color: white;
+            border: none;
+            font-size: 50px;
+            margin: 0px 10px;
+        }
+        
+        table {
+            width: 200px;
+            position: relative;
+            top: 60px;
+            left: 5px;
+        }
+        
+        .silver {
+            background-color: silver;
+            color: black;
+            padding: 15px 20px;
+            border-radius: 70px;
+            border: none;
+            /* margin: 10px 3px; */
+            font-size: 20px;
+        }
+        
+        .black {
+            background-color: rgb(69, 68, 68);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 35px;
+            border: none;
+            font-size: 20px;
+        }
+        
+        .orange {
+            background-color: orange;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 35px;
+            border: none;
+            font-size: 20px;
+        }
+        
+        #zero {
+            padding: 15px 60px;
+        }
+        
+        #title {
+            color: white;
+            width: 200px;
+            font-size: medium;
+            padding-left: 75px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <div class="table">
+            <h1 id="title">Simple Calculator</h1>
+            <table>
+                <div class="input">
+                    <input type="text" id="screen" />
+                </div>
+                <div class="num">
+                    <tr>
+                        <td><button onclick="ac()" class="silver"><b>AC</b></button></td>
+                        <td><button onclick="val('-')" class="silver"><b>+/-</b></button></td>
+                        <td><button onclick="val('%')" class="silver"><b>%</b></button></td>
+                        <td>
+                            <button onclick="val('/')" class="orange"><b>÷</b></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="val('7')" class="black">7</button></td>
+                        <td><button onclick="val('8')" class="black">8</button></td>
+                        <td><button onclick="val('9')" class="black">9</button></td>
+                        <td><button onclick="val('*')" class="orange"><b>x</b></button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="val('4')" class="black">9</button></td>
+                        <td><button onclick="val('5')" class="black">0</button></td>
+                        <td><button onclick="val('6')" class="black">6</button></td>
+                        <td><button onclick="val('-')" class="orange"><b>-</b></button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="val('1')" class="black">1</button></td>
+                        <td><button onclick="val('2')" class="black">2</button></td>
+                        <td><button onclick="val('3')" class="black">3</button></td>
+                        <td><button onclick="val('+')" class="orange">+</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button onclick="val('0')" class="black" id="zero">0</button></td>
+                        <td><button onclick="val('.')" class="black">.</button></td>
+                        <td><button onclick="calculate()" class="orange">=</button></td>
+                    </tr>
+                </div>
+            </table>
+        </div>
+    </div>
+    <script>
+        function ac() {
+            document.getElementById("screen").value = ""
+                // alert("work")
+        }
+
+        function val(input) {
+            document.getElementById("screen").value += input;
+            // alert("work")
+        }
+
+        function calculate() {
+            var op = eval(document.getElementById("screen").value);
+            document.getElementById('screen').value = op
+        }
+    </script>
+</body>
+
+</html>
